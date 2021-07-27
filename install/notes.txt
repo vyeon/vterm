@@ -1,0 +1,6 @@
+For RHEL 7,
+
+1. Install perl packages before configuring and building VIM
+
+sudo yum install perl-devel
+sudo yum install perl-ExtUtils-Embed.noarch

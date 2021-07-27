@@ -69,6 +69,21 @@ else
 	tar -zxf $autoconf.tar.gz
 fi
 
+# pkgconf
+
+if [ -e "$pkgconf.tar.gz" ]; then
+	echo "$pkgconf.tar.gz exists"
+else
+	wget https://github.com/pkgconf/pkgconf/releases/download/pkgconf-1.0.1/pkgconf-1.0.1.tar.gz
+fi
+
+if [ -d "$pkgconf" ]; then
+	echo "a directory $pkgconf exists"
+else
+	echo "unzip $pkgconf.tar.gz"
+	tar -zxf $pkgconf.tar.gz
+fi
+
 # gettext
 
 if [ -e "$gettext.tar.gz" ]; then
@@ -205,14 +220,14 @@ fi
 if [ -e "$tmux.tar.gz" ]; then
 	echo "$tmux.tar.gz exists"
 else
-	wget https://github.com/tmux/tmux/releases/download/3.2-rc/tmux-3.2-rc2.tar.gz
+	wget https://github.com/tmux/tmux/releases/download/3.2a/tmux-3.2a.tar.gz
 fi
 
 if [ -d $tmux ]; then
 	echo "a directory $tmux exists"
 else
-	echo "unzip $tmux.tar.gz"
-	tar -zxf $tmux.tar.gz
+	echo "unzip $tmux-3.2a.tar.gz"
+	tar -zxf $tmux.tar-3.2a.gz
 fi
 
 # cmake

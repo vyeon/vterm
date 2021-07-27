@@ -73,6 +73,15 @@ make -j `nproc`
 make install
 cd ..
 
+echo "build $pkgconf"
+cd "$BaseDir/$pkgconf"
+pwd
+./configure --prefix=$LocalDir
+make -j `nproc`
+make install
+cd ..
+
+
 echo "build $gettext"
 cd "$BaseDir/$gettext"
 pwd

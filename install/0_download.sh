@@ -2,7 +2,7 @@ source ./_package_list.sh
 
 if [ -d "tmp" ]; then
 	echo "a directory tmp exists"
-	exit
+	#exit
 else
 	mkdir tmp
 fi
@@ -261,4 +261,13 @@ else
     git clone https://github.com/llvm/llvm-project.git
 fi
 
+# boost
+if [ -d $boost ]; then
+	echo "a directory $boost exists"
+else
+	echo "Download $boost"
+	wget https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_1_76_0.tar.gz
+	echo "unzip $boost.tar.gz"
+	tar -zxf $boost.tar.gz
+fi
 

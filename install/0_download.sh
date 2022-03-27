@@ -266,7 +266,7 @@ if [ -d $boost ]; then
 	echo "a directory $boost exists"
 else
 	echo "Download $boost"
-	wget https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_1_76_0.tar.gz
+	wget https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.gz
 	echo "unzip $boost.tar.gz"
 	tar -zxf $boost.tar.gz
 fi

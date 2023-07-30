@@ -19,4 +19,4 @@ PrintEnv() {
 PATH="${LocalBin}:${LocalSBin}:${PATH}"
 LD_LIBRARY_PATH="${LocalLib64}:${LocalLib}:${LD_LIBRARY_PATH}"
 
-PrintEnv
+#PrintEnv

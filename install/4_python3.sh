@@ -1,3 +1,5 @@
+#!/bin/bash
+
 source ./_env.sh
 
 PrintEnv
@@ -45,5 +47,15 @@ cd $directory
 ./configure --prefix=$LocalDir --enable-optimizations -enable-shared --with-ensurepip=install --enable-loadable-sqlite-extensions --with-openssl=${LocalDir} --with-openssl-rpath=${LocalDir}/lib
 make -j `nproc`
 make altinstall
+
+# Add symbolic link for Python3
+PYTHON_BIN_DIR=$LocalDir/bin
+if [ -f "${PYTHON_BIN_DIR}/python3" ]; then
+    echo "The symbolic link 'python3' already exists. Removing..."
+    rm "${PYTHON_BIN_DIR}/python3"
+fi
+echo "Creating new symbolic link 'python3' for Python3.11"
+ln -s ${PYTHON_BIN_DIR}/python3.11 ${PYTHON_BIN_DIR}/python3
+
 cd ..
 

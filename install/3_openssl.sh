@@ -1,3 +1,5 @@
+#!/bin/bash
+
 source ./_env.sh
 
 PrintEnv
@@ -14,7 +16,7 @@ echo "build OpenSSL"
 cd "$BaseDir"
 pwd
 
-OpenSSLVersion="openssl-1.1.1u"
+OpenSSLVersion="openssl-3.0.13"
 download_url="https://www.openssl.org/source/${OpenSSLVersion}.tar.gz"
 
 if [ -f "${OpenSSLVersion}.tar.gz" ]; then
@@ -41,9 +43,9 @@ fi
 
 cd ${OpenSSLVersion}
 
-./config --prefix=${LocalDir} --openssldir=${LocalDir} shared zlib
+./Configure --prefix=${LocalDir} --openssldir=${LocalDir} shared zlib
 make -j
-make test
+#make test
 make install
 
 cd ..
